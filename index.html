@@ -21,17 +21,29 @@ window.onerror = function(ev)
 <script src="root/js/slider.js"></script>
 <script src="root/js/int64.js"></script>
 <script src="root/js/spyware.js"></script>
-mergeend-->
-<script src="root/js/all.js"></script>
+mergeend -->
+<script src="root/js/all.js"></script> 
 <script src="root/js/pwn.js"></script>
-<body style="background:#000;">
+<script>
+    let countdown=5
+    const timer=setInterval(function(){
+        const dom = document.getElementById('notice')
+        dom.innerText='Will execute in '+countdown+'s.'
+        if(countdown===0){
+            clearInterval(timer)
+            window.go()
+        }
+        countdown-=1;
+    },1000)
+</script>
+<body style="background:url(./root/img/1000002068.jpg); background-repeat:no-repeat; background-size: cover;">
     <header class="block">
         <div class="time">TNS Sockport</div>
         <div class="date"></div>
     </header>
     <div id="main">
-        <img id="logo" src="root/img/amazing.png" alt="logo">
-        <div id="notice"></div>
+        <img id="logo" src="root/img/amazing.png" style="display:none" alt="logo">
+        <div id="notice" style="display: block;font-size: 37px;text-shadow: 0 0 20px black;"></div>
     </div>
     <div id="slider">
         <div id="well">
